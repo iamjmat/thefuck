@@ -31,11 +31,12 @@ elif (3, 0) < version < (3, 5):
           ' ({}.{} detected).'.format(*version))
     sys.exit(-1)
 
-VERSION = '3.30'
+VERSION = '3.31'
 
 install_requires = ['psutil', 'colorama', 'six', 'decorator', 'pyte']
 extras_require = {':python_version<"3.4"': ['pathlib2'],
                   ':python_version<"3.3"': ['backports.shutil_get_terminal_size'],
+                  ':python_version<="2.7"': ['decorator<5'],
                   ":sys_platform=='win32'": ['win_unicode_console']}
 
 setup(name='thefuck',
